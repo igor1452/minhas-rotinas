@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nossa rotina</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0px;
+            background-color: black; <!--muda a cor de fundo do site-->
+            color: white; <!--muda a cor do texto do site-->
+        }
+        header {
+            background-color: #007BFF; <!--muda a cor de fundo do header-->
+            color: ffffff; 
+            padding: 10px;
+            text-align: center;
+            bottom: 0;
+            width: 100%;
+        }
+        main {
+            padding: 3px;
+        }
+        footer {
+            background-color: lightblue;
+            color: red;
+            text-align: center;
+            padding: 10px;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 5px 10px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #ffffff;
+            background: linear-gradient(90deg, blue, #3838ff);
+            border: none;
+            border-radius: 25px;
+            text-decoration: none;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background: linear-gradient(90deg, blue, red);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .button:active {
+            transform: translateY(0);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .routine-content {
+            display: none;
+            padding: 20px;
+            margin-top: 20px;
+            background-color: #333;
+            border-radius: 8px;
+            color: white;
+        }
+
+        .routine-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 style="color:white">Rotina</h1>
+    </header>
+
+    <main>
+        <section id="igor-routine" class="routine-content">
+            <h2>Rotina do Igor</h2>
+            <p>6:00 AM - Acordar e ir para a escola</p>
+            <p>13:30 AM - Almoçar</p>
+            <p>14:00 AM - Estudar programação</p>
+            <p>15:00 PM - treinar calistenia</p>
+            <p>16:00 PM - editar meus vídeos </p>
+            <p>18:00 PM - tempo livre pra descansar</p>
+            <p>21:00 PM - Jantar</p>
+            <p>22:00 PM - Dormir</p>
+            <p>15:00 PM -  sexta-feira: Se arrumar para aula de computação</p>
+        </section>
+
+        <section id="aghata-routine" class="routine-content active">
+            <h2>Rotina da Ághata</h2>
+            <p>6:30 AM - Acordar e tomar café </p>
+            <p>7:00 AM - práticar programação</p>
+            <p>7:30 AM - tempo livre</p>
+            <p>12:00 PM - trabalhar</p>
+            <p>1:00 PM - ir para a escola</p>
+            <p>5:30 PM - atividades físicas</p>
+            <p>7:00 PM - tempo livre para lazer</p>
+            <p>8:00 PM - jantar</p>
+            <p>9:00 PM - + ver filme</p>
+            <p>10:00 PM - Dorme</p>
+        </section>
+    </main>
+
+    <footer>
+        <a href="#igor" class="button" onclick="showRoutine('igor')">Igor</a>
+        <a href="#aghata" class="button" onclick="showRoutine('aghata')">Ághata</a>
+    </footer>
+
+    <script>
+        function showRoutine(person) {
+            const igorRoutine = document.getElementById('igor-routine');
+            const aghataRoutine = document.getElementById('aghata-routine');
+            
+            if (person === 'igor') {
+                igorRoutine.classList.add('active');
+                aghataRoutine.classList.remove('active');
+            } else {
+                aghataRoutine.classList.add('active');
+                igorRoutine.classList.remove('active');
+            }
+        }
+    </script>
+</body>
+</html>
